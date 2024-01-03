@@ -1,6 +1,6 @@
 <div align="center">
-    <img src="https://raw.githubusercontent.com/15Galan/42_project-readmes/master/banners/cursus/push_swap-light.png#gh-light-mode-only" alt="Banner (claro)" />
-    <img src="https://raw.githubusercontent.com/15Galan/42_project-readmes/master/banners/cursus/push_swap-dark.png#gh-dark-mode-only" alt="Banner (oscuro)" />
+    <img src="https://github.com/15Galan/42_project-readmes/blob/master/banners/cursus/projects/push_swap-light.png?raw=true#gh-light-mode-only" alt="Banner (claro)" />
+    <img src="https://github.com/15Galan/42_project-readmes/blob/master/banners/cursus/projects/push_swap-dark.png?raw=true#gh-dark-mode-only" alt="Banner (oscuro)" />
     <br>
     This proyect consists of sorting a stack of numbers using two stacks and a limited set of instructions.
     <br>
