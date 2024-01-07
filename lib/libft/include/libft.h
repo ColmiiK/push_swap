@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:56:19 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/02 13:22:51 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/07 12:33:41 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 # endif
 
 # include <fcntl.h>
-# include <stdarg.h>
-# include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdarg.h>
+# include <stdbool.h>
 
 typedef struct s_list
 {
@@ -303,7 +303,7 @@ char				*ft_strtrim(char const *s1, char const *set);
 
 /**
 
- * @brief Separates a string into substrings when encountering a
+ * @brief Separates a string into substrings when encountering a 
  * given character, returning a 2D array of said substrings
  *
  * @param s String to separate
@@ -459,10 +459,10 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 void				ft_putnbr_base(int nbr, char *base);
 
 /**
- * @brief Prints any number of arguments to the standard output. Supports
+ * @brief Prints any number of arguments to the standard output. Supports 
  conversions like %s, %c, %i, %u, %x, %X, %p and %%. Doesn't support
  modifying flags nor returns -1 on error.
- *
+ * 
  * @param input Sring to print
  * @param ... Any number of arguments to print
  * @return int Number of characters printed
@@ -500,6 +500,21 @@ char				*get_next_line(int fd);
  * @return A pointer to the reallocated memory block, or NULL if the operation
  * failed.
  */
-void				*ft_realloc(void *ptr, size_t old_size, size_t new_size);
+void				*ft_realloc(void *ptr, size_t new_size);
+
+/**
+ * @brief Splits a string into tokens based on a delimiter.
+ *
+ * This function takes a string and a delimiter as input and splits 
+ * the string into tokens.
+ * It returns a pointer to the first token found in the string, 
+ * or NULL if no token is found.
+ *
+ * @param str The string to be tokenized.
+ * @param del The delimiter used to split the string.
+ * @return A pointer to the first token found in the string, 
+ * or NULL if no token is found.
+ */
+char				*ft_strtok(char *str, char *del);
 
 #endif

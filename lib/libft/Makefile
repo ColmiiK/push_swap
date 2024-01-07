@@ -30,7 +30,7 @@ SRC_FILES = ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint \
 	ft_calloc ft_strdup ft_substr ft_strjoin ft_strtrim ft_split \
 	ft_itoa ft_strmapi ft_striteri ft_putchar_fd ft_putstr_fd \
 	ft_putendl_fd ft_putnbr_fd get_next_line ft_printf print_characters \
-	print_hexes print_numbers ft_realloc
+	print_hexes print_numbers ft_realloc ft_strtok
 	
 B_SRC_FILES = ft_lstnew_bonus ft_lstadd_front_bonus ft_lstsize_bonus ft_lstlast_bonus ft_lstadd_back_bonus \
 	ft_lstdelone_bonus ft_lstclear_bonus ft_lstiter_bonus ft_lstmap_bonus
@@ -47,14 +47,14 @@ all:		$(NAME)
 
 $(NAME):	$(OBJ)
 			@ar -rc $@ $?
-			@echo "$(CYAN)$(NAME) compiled!$(DEF_COLOR)"
+			@echo "$(GREEN)$(NAME) compiled!$(DEF_COLOR)"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
-			@echo "$(CYAN)Compiling: $< $(DEF_COLOR)"
+			@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
 			@$(CC) -I./$(INCLUDE) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR)%.o: $(B_SRC_DIR)%.c | $(OBJF)
-			@echo "$(CYAN)Compiling: $< $(DEF_COLOR)"
+			@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
 			@$(CC) -I./$(INCLUDE) $(CFLAGS) -c $< -o $@
 
 $(OBJF):
@@ -67,10 +67,10 @@ clean:
 fclean:		
 			@$(RM) -rf $(OBJ_DIR)
 			@$(RM) -f $(NAME)
-			@echo "$(CYAN)$(NAME) executable cleaned!$(DEF_COLOR)"
+			@echo "$(BLUE)$(NAME) executable cleaned!$(DEF_COLOR)"
 
 re:			fclean all
-			@echo "$(CYAN)$(NAME) recompiled!$(DEF_COLOR)"
+			@echo "$(MAGENTA)$(NAME) recompiled!$(DEF_COLOR)"
 
 norm:
 			@norminette $(SRC) $(B_SRC) $(INCLUDE)

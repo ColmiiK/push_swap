@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:59:47 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/03 16:17:18 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/07 13:50:13 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,108 @@
 	get those numbers in a linked list (1->2->3)
 	calculate where all those numbers should be, the correct position in the stack
 	
+	INPUT:
+	./push_swap 3 2 1 4 -2 0
+	./push_swap "3 2 1 4 -2 0"
+	./push_swap "3 2" 1 4 "-2 0"
 	
 */
+
+void ft_perror(char *s)
+{
+	ft_putendl_fd(s, STDERR_FILENO);
+	exit(EXIT_FAILURE);
+}
+
+char *ft_parse_av(char **av)
+{
+	char *joined;
+	int i;
+
+	joined = ft_calloc(1, 1);
+	i = 0;
+	while (av[++i])
+	{
+		joined = ft_strjoin(joined, av[i]);
+		joined[ft_strlen(joined)] = ' ';
+	}
+	i = -1;
+	while (joined[++i])
+	{
+		if (!((joined [i] > '0' && joined[i] < '9') || joined[i] == ' '))
+			ft_perror("Error");
+	}
+	return (joined);
+}
+
+void ft_add_to_list(t_stack **stack, char *token)
+{
+	t_stack *new;
+	t_stack *current;
+
+	new = malloc(sizeof(t_stack));
+	if (!new)
+		ft_perror("Error");
+	new->n = ft_atoi(token);
+	new->next = NULL;
+	if (!*stack)
+		*stack = new;
+	else
+	{
+		current = *stack;
+		while (current->next)
+			current = current->next;
+		current->next = new;
+	}
+}
+
+void ft_print_list(t_stack *stack) {
+    t_stack *current = stack;
+
+    while (current != NULL) {
+       	ft_printf("%d\n", current->n);
+        current = current->next;
+    }
+}
+
+void ft_check_list(t_stack *stack)
+{
+	t_stack *current;
+	t_stack *check;
+
+	current = stack;
+	while (current)
+	{
+		check = current->next;
+		while (check)
+		{
+			if (current->n == check->n)
+				ft_perror("Error");
+			check = check->next;
+		}
+		current = current->next;
+	}
+}
+
 int main(int ac, char **av)
 {
-		
+	char *str;
+	char *token;
+	t_stack *stack_a;
+	// t_stack *stack_b;
+	
+	stack_a = NULL;
+	// stack_b = NULL;
+	if (ac < 2)
+		ft_perror("Error");
+	str = ft_parse_av(av);
+	
+	token = ft_strtok(str, " ");
+	while (token)
+	{
+		ft_add_to_list(&stack_a, token);
+		token = ft_strtok(NULL, " ");
+	}
+	ft_check_list(stack_a);
+	ft_print_list(stack_a);
 }
