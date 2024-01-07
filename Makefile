@@ -24,7 +24,7 @@ WHITE = \033[0;97m
 
 #Sources
 	
-SRC_FILES = main
+SRC_FILES = main utils parsing
 B_SRC_FILES = 
 
 SRC = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
