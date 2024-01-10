@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:35:38 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:33:56 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/10 12:35:03 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,17 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	int		j;
 	char	*joined;
+	size_t	len;
 
-	i = 0;
-	j = 0;
-	joined = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!s1 || !s2)
+		return (NULL);
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	joined = malloc(len);
 	if (!joined)
-		return (0);
-	while (s1[i])
-	{
-		joined[i] = s1[i];
-		i++;
-	}
-	while (s2[j])
-	{
-		joined[i] = s2[j];
-		i++;
-		j++;
-	}
-	joined[i] = 0;
+		return (NULL);
+	ft_strlcpy(joined, s1, ft_strlen(s1) + 1);
+	ft_strlcat(joined, s2, len);
 	return (joined);
 }
 

@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 12:29:47 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/07 12:30:27 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/10 11:28:48 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static int	ft_in_set(char c, char *set)
 
 char	*ft_strtok(char *str, char *del)
 {
-	static char *next = NULL;
-	char *token;
+	static char	*next = NULL;
+	char		*token;
 
 	if (!str && !next)
 		return (NULL);
