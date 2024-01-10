@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 14:24:20 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/10 12:36:16 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:07:41 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,23 @@ static void	ft_add_to_list(t_stack **stack, char *token)
 	}
 }
 
+static bool	ft_check_token(char *token)
+{
+	int	i;
+
+	i = -1;
+	while (token[++i])
+	{
+		if (token[i] == '-' && !ft_isdigit(token[i + 1]))
+			return (false);
+		if (token[i] == '-')
+			i++;
+		if (!ft_isdigit(token[i]))
+			return (false);
+	}
+	return (true);
+}
+
 void	ft_parse_av(char **av, t_stack **stack)
 {
 	char	*joined;
@@ -66,15 +83,11 @@ void	ft_parse_av(char **av, t_stack **stack)
 		joined[ft_strlen(joined)] = ' ';
 	}
 	i = -1;
-	while (joined[++i])
-	{
-		if (!((joined[i] >= '0' && joined[i] <= '9')
-				|| joined[i] == ' '))
-			ft_perror("Error");
-	}
 	token = ft_strtok(joined, " ");
 	while (token)
 	{
+		if (ft_check_token(token) == false)
+			ft_perror("Error");
 		ft_add_to_list(stack, token);
 		token = ft_strtok(NULL, " ");
 	}
