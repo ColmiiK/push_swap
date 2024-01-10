@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 14:24:20 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/10 16:07:41 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:41:01 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,19 @@ static void	ft_add_to_list(t_stack **stack, char *token)
 {
 	t_stack	*new;
 	t_stack	*current;
+	char *temp;
 
 	new = malloc(sizeof(t_stack));
 	if (!new)
 		ft_perror("Error");
 	new->n = ft_atoi(token);
+	temp = ft_itoa(new->n);
+	if (ft_strncmp(token, temp, ft_strlen(token)))
+	{
+		free(temp);
+		ft_perror("Error");
+	}
+	free(temp);
 	new->next = NULL;
 	if (*stack == NULL)
 		*stack = new;
