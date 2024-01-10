@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:59:47 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/10 17:05:29 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/10 19:13:47 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,10 @@ void debug_print(t_stack *stack_a, t_stack *stack_b)
     ft_printf("BEFORE MOVE:\n");
     print_stacks_side_by_side(stack_a, stack_b);
 
-    ft_rrotate(&stack_a);
-	ft_rotate(&stack_a);
-
+	ft_pb(&stack_b, &stack_a);
+	ft_pb(&stack_b, &stack_a);
+	ft_pb(&stack_b, &stack_a);
+	ft_rr(&stack_a, &stack_b);
 
     ft_printf("AFTER MOVE:\n");
     print_stacks_side_by_side(stack_a, stack_b);

@@ -24,7 +24,7 @@ WHITE = \033[0;97m
 
 #Sources
 	
-SRC_FILES = main utils parsing moves
+SRC_FILES = main utils parsing moves perms_a perms_b perms_d
 B_SRC_FILES = 
 
 SRC = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
