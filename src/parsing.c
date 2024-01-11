@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 14:24:20 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/11 11:25:14 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/11 13:36:28 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ static bool	ft_check_token(char *token)
 void	ft_parse_av(char **av, t_stack **stack)
 {
 	char	*joined;
+	char	*temp;
 	char	*token;
 	int		i;
 
@@ -87,8 +88,10 @@ void	ft_parse_av(char **av, t_stack **stack)
 	i = 0;
 	while (av[++i])
 	{
-		joined = ft_strjoin(joined, av[i]);
-		joined[ft_strlen(joined)] = ' ';
+		temp = ft_strjoin(joined, " ");
+		free(joined);
+		joined = ft_strjoin(temp, av[i]);
+		free(temp);
 	}
 	token = ft_strtok(joined, " ");
 	while (token)
@@ -98,5 +101,6 @@ void	ft_parse_av(char **av, t_stack **stack)
 		ft_add_to_list(stack, token);
 		token = ft_strtok(NULL, " ");
 	}
+	free(joined);
 	ft_check_list(*stack);
 }
