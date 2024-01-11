@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 14:24:20 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/11 10:38:32 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/11 11:25:14 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ void	ft_parse_av(char **av, t_stack **stack)
 		joined = ft_strjoin(joined, av[i]);
 		joined[ft_strlen(joined)] = ' ';
 	}
-	i = -1;
 	token = ft_strtok(joined, " ");
 	while (token)
 	{

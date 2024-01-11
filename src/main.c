@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:59:47 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/11 10:41:11 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/11 12:46:09 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,33 @@
 
 /*	INSTRUCTIONS:
 	
-	TODO:
-	calculate where all those numbers should be, the correct position in the stack
+	COST ANALYSIS:
+	Every 'a' node needs a target node from stack 'b'
+	The target node will be the closest smaller number to the 'a' node
+	If no closest smaller number is found, then the target node will be the max value
+	sum(operations to bring 'a' to top + operations to bring 'a->target node' on top)
+	after each push, we re-evaluate the costs and choose the cheapest move
 	
+	SORT THREE:
+	Ensure biggest number is last
+	Perform sa if needed
+	
+
+	FLOW:
+	If stack a is bigger than 3: push 2 numbers to stack b
+	Until stack a is equal to 3: calculate costs and perform cheapest move from stack a to stack b, repeat until there are 3 nodes left in a
+	Sort those three nodes
+	Push all nodes in stack b to stack a: calculate costs and perform cheapest move from stack b to stack a
+	Rotate or reverse rotate to take the smallest node to the top
+
+	
+	TODO:
+	Utility functions:
+		-Find stack lenght
+		-Find the last node
+		-Find the min and the max node
+
+
 	DONE:
 	sa -> swap the first and second numbers of stack a
 	sb -> swap the first and second numbers of stack b
@@ -40,6 +64,7 @@
 	./push_swap "3 2" 1 4 "-2 0"
 	
 */
+
 
 void print_stacks_side_by_side(t_stack *stack_a, t_stack *stack_b)
 {
@@ -72,14 +97,22 @@ void debug_print(t_stack *stack_a, t_stack *stack_b)
     ft_printf("BEFORE MOVE:\n");
     print_stacks_side_by_side(stack_a, stack_b);
 
-	ft_pb(&stack_b, &stack_a);
-	ft_pb(&stack_b, &stack_a);
-	ft_rb(&stack_b);
-	// ft_rr(&stack_a, &stack_b);
+	if (ft_is_stack_sorted(stack_a) == false)
+	{
+		ft_printf("STACK IS NOT SORTED\n");
+		if (ft_stack_len(stack_a) == 2)
+			ft_sa(&stack_a);
+		else if (ft_stack_len(stack_a) == 3)
+			ft_sort_three(&stack_a);
+			
+	}
+	else
+		ft_printf("STACK IS SORTED\n");
 
     ft_printf("\nAFTER MOVE:\n");
     print_stacks_side_by_side(stack_a, stack_b);
 }
+
 
 int main(int ac, char **av)
 {
