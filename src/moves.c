@@ -6,15 +6,15 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:08:44 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/10 17:05:36 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/11 10:38:09 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void ft_swap(t_stack **stack)
+void	ft_swap(t_stack **stack)
 {
-	int temp;
+	int	temp;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
@@ -23,10 +23,10 @@ void ft_swap(t_stack **stack)
 	(*stack)->next->n = temp;
 }
 
-void ft_push(t_stack **dest, t_stack **src)
+void	ft_push(t_stack **dest, t_stack **src)
 {
-	t_stack *temp;
-	
+	t_stack	*temp;
+
 	if (*src == NULL)
 		return ;
 	temp = *src;
@@ -35,10 +35,10 @@ void ft_push(t_stack **dest, t_stack **src)
 	*dest = temp;
 }
 
-void ft_rotate(t_stack **stack)
+void	ft_rotate(t_stack **stack)
 {
-	t_stack *first;
-	t_stack *current;
+	t_stack	*first;
+	t_stack	*current;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
@@ -51,10 +51,10 @@ void ft_rotate(t_stack **stack)
 	first->next = NULL;
 }
 
-void ft_rrotate(t_stack **stack)
+void	ft_rrotate(t_stack **stack)
 {
-	t_stack *last;
-	t_stack *current;
+	t_stack	*last;
+	t_stack	*current;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
