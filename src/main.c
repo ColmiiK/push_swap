@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:59:47 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/11 16:10:27 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/11 16:26:13 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@
 */
 
 
-void print_stacks_side_by_side(t_stack *stack_a, t_stack *stack_b)
+void print_stacks(t_stack *stack_a, t_stack *stack_b)
 {
     t_stack *current_a = stack_a;
     t_stack *current_b = stack_b;
@@ -92,30 +92,6 @@ void print_stacks_side_by_side(t_stack *stack_a, t_stack *stack_b)
 	ft_printf("\n");
 }
 
-void debug_print(t_stack **stack_a, t_stack **stack_b)
-{
-    ft_printf("BEFORE MOVE:\n");
-    print_stacks_side_by_side(*stack_a, *stack_b);
-
-	if (ft_is_stack_sorted(*stack_a) == false)
-	{
-		ft_printf("STACK IS NOT SORTED\n");
-		if (ft_stack_len(*stack_a) == 2)
-			ft_sa(stack_a);
-		else if (ft_stack_len(*stack_a) == 3)
-			ft_sort_three(stack_a);
-	}
-	else
-		ft_printf("STACK IS SORTED\n");
-
-    ft_printf("\nAFTER MOVE:\n");
-    print_stacks_side_by_side(*stack_a, *stack_b);
-}
-
-void leaks()
-{
-	system("leaks -q push_swap");
-}
 
 void ft_annihilation(t_stack *stack)
 {
@@ -136,16 +112,22 @@ int main(int ac, char **av)
     t_stack *stack_a;
     t_stack *stack_b;
     
-    // atexit(leaks);
     stack_a = NULL;
     stack_b = NULL;
     if (ac < 2)
         ft_perror("Error");
     ft_parse_av(av, &stack_a);
-    
-    
-    debug_print(&stack_a, &stack_b);
-    
+	print_stacks(stack_a, stack_b);
+	if (ft_is_stack_sorted(stack_a) == false)
+	{
+		if (ft_stack_len(stack_a) == 2)
+			ft_sa(&stack_a);
+		else if (ft_stack_len(stack_a) == 3)
+			ft_sort_three(&stack_a);
+		else
+			ft_sort_stacks(&stack_a, &stack_b);
+	}
+    print_stacks(stack_a, stack_b);
     ft_annihilation(stack_a);
     ft_annihilation(stack_b);
 }

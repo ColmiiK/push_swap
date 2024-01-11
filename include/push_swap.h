@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:57:17 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/11 12:46:26 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/11 17:00:48 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_stack
 	int				n;
 	int				index;
 	int				cost;
+	int				push_cost;
 	bool			above_median;
 	bool			cheapest;
 	
@@ -33,6 +34,7 @@ void				ft_perror(char *s);
 void				ft_parse_av(char **av, t_stack **stack);
 bool				ft_is_stack_sorted(t_stack *stack);
 void				ft_sort_three(t_stack **stack);
+void				ft_sort_stacks(t_stack **stack_a, t_stack **stack_b);
 t_stack				*ft_find_big(t_stack *stack);
 int					ft_stack_len(t_stack *stack);
 
