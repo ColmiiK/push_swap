@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:59:47 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/11 14:01:51 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/11 16:10:27 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,7 @@ void debug_print(t_stack **stack_a, t_stack **stack_b)
 		if (ft_stack_len(*stack_a) == 2)
 			ft_sa(stack_a);
 		else if (ft_stack_len(*stack_a) == 3)
-			ft_ra(stack_a);
-			// ft_sort_three(&stack_a);
+			ft_sort_three(stack_a);
 	}
 	else
 		ft_printf("STACK IS SORTED\n");
@@ -126,7 +125,6 @@ void ft_annihilation(t_stack *stack)
 	current = stack;
 	while (current != NULL)
 	{
-		ft_printf("%d\n", current->n);
 		next = current->next;
 		free(current);
 		current = next;
