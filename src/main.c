@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:59:47 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/11 16:26:13 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/11 19:49:13 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,15 @@
 	./push_swap 3 2 1 4 -2 0
 	./push_swap "3 2 1 4 -2 0"
 	./push_swap "3 2" 1 4 "-2 0"
+
+
+	CURRENT:
+	./push_swap 5 4 3 2 1
+	pb
+	pb
+	ra
+	sa
+	Seg fault
 	
 */
 
