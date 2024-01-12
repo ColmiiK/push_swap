@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:25:03 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/11 19:47:02 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/12 13:11:18 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void ft_set_target_b(t_stack *stack_a, t_stack *stack_b)
 		current = stack_a;
 		while (current)
 		{
-			if (current->n < stack_b->n && current->n > best)
+			if (current->n > stack_b->n && current->n < best)
 			{
 				best = current->n;
 				target = current;
@@ -97,11 +97,12 @@ void ft_set_target_b(t_stack *stack_a, t_stack *stack_b)
 			current = current->next;
 		}
 		if (best == LONG_MAX)
-			stack_b->target_node = ft_find_small(stack_b);
+			stack_b->target_node = ft_find_small(stack_a);
 		else
 			stack_b->target_node = target;
 		stack_b = stack_b->next;
 	}
+	ft_printf("TARGET -> %d\n", current->n);
 }
 
 void ft_cost(t_stack *stack_a, t_stack *stack_b)
@@ -113,11 +114,11 @@ void ft_cost(t_stack *stack_a, t_stack *stack_b)
 	len_b = ft_stack_len(stack_b);
 	while (stack_a)
 	{
-		stack_a->cost = stack_a->index;
+		stack_a->push_cost = stack_a->index;
 		if (!(stack_a->above_median))
-			stack_a->cost = len_a - stack_a->index;
-		if (!(stack_a->target_node->above_median))
-			stack_a->push_cost += len_a - stack_a->target_node->index;
+			stack_a->push_cost = len_a - stack_a->index;
+		if (stack_a->target_node->above_median)
+			stack_a->push_cost += stack_a->target_node->index;
 		else
 			stack_a->push_cost += len_b - stack_a->target_node->index;
 		stack_a = stack_a->next;
@@ -194,23 +195,40 @@ t_stack *ft_get_cheapest(t_stack *stack)
 	return (NULL);
 }
 
+void ft_rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheap)
+{
+	while (*stack_b != cheap->target_node && *stack_a != cheap)
+		ft_rr(stack_a, stack_b);
+	ft_index(*stack_a);
+	ft_index(*stack_b);
+}
+
+void ft_rrotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheap)
+{
+	while (*stack_b != cheap->target_node && *stack_a != cheap)
+		ft_rrr(stack_a, stack_b);
+	ft_index(*stack_a);
+	ft_index(*stack_b);
+}
+
 void ft_move_from_a(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack *cheap;
 	
 	cheap = ft_get_cheapest(*stack_a);
 	if (cheap->above_median && cheap->target_node->above_median)
-		ft_rr(stack_a, stack_b);
+		ft_rotate_both(stack_a, stack_b, cheap);
 	else if (!(cheap->above_median) && !(cheap->target_node->above_median))
-		ft_rrr(stack_a, stack_b);
+		ft_rrotate_both(stack_a, stack_b, cheap);
 	ft_prepare_push(stack_a, cheap, 'a');
-	ft_prepare_push(stack_b, cheap, 'b');
+	ft_prepare_push(stack_b, cheap->target_node, 'b');
 	ft_pb(stack_b, stack_a);
 	
 }
 
 void ft_move_from_b(t_stack **stack_a, t_stack **stack_b)
 {
+	ft_printf("TARGET: %d\n", ((*stack_b)->target_node->n));
 	ft_prepare_push(stack_a, (*stack_b)->target_node, 'a');
 	ft_pa(stack_a, stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:57:17 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/11 17:00:48 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/12 12:39:36 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void				ft_sort_three(t_stack **stack);
 void				ft_sort_stacks(t_stack **stack_a, t_stack **stack_b);
 t_stack				*ft_find_big(t_stack *stack);
 int					ft_stack_len(t_stack *stack);
+
+void print_stacks(t_stack *stack_a, t_stack *stack_b);
 
 void				ft_swap(t_stack **stack);
 void				ft_push(t_stack **dest, t_stack **src);
