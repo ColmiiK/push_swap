@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 14:25:28 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/11 19:36:30 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/15 16:36:16 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,5 @@ int ft_stack_len(t_stack *stack)
 		len++;
 		current = current->next;
 	}
-
 	return (len);
 }
