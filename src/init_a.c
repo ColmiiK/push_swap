@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:07:45 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/15 17:40:41 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/16 12:38:05 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void ft_cost(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-void ft_find_cheapest(t_stack *stack)
+void ft_set_cheapest(t_stack *stack)
 {
 	int cheap_value;
 	t_stack *cheap_node;
@@ -100,7 +100,7 @@ void ft_init_stack_a(t_stack *stack_a, t_stack *stack_b)
 	ft_index(stack_b);
 	ft_set_a_target(stack_a, stack_b);
 	ft_cost(stack_a, stack_b);
-	ft_find_cheapest(stack_a);
+	ft_set_cheapest(stack_a);
 	// print_targets_and_costs(stack_a);
 	
 }

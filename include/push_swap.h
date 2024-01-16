@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:57:17 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/15 17:19:33 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/16 13:05:35 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,18 @@ bool				ft_is_stack_sorted(t_stack *stack);
 void				ft_sort_three(t_stack **stack);
 void				ft_sort_stacks(t_stack **stack_a, t_stack **stack_b);
 t_stack				*ft_find_big(t_stack *stack);
+t_stack				*ft_find_min(t_stack *stack);
 int					ft_stack_len(t_stack *stack);
-void ft_index(t_stack *stack);
-void ft_init_stack_a(t_stack *stack_a, t_stack *stack_b);
-void print_stacks(t_stack *stack_a, t_stack *stack_b);
+void				ft_index(t_stack *stack);
+void				ft_init_stack_a(t_stack *stack_a, t_stack *stack_b);
+void				ft_init_stack_b(t_stack *stack_a, t_stack *stack_b);
+void				ft_min_on_top(t_stack **stack_a);
+void				ft_prepare_push(t_stack **stack, t_stack *top, char c);
+void				ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b);
+void				ft_move_b_to_a(t_stack **stack_a, t_stack **stack_b);
+
+
+void				print_stacks(t_stack *stack_a, t_stack *stack_b);
 
 void				ft_swap(t_stack **stack);
 void				ft_push(t_stack **dest, t_stack **src);

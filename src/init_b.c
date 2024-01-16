@@ -1,0 +1,47 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_b.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/16 12:56:26 by alvega-g          #+#    #+#             */
+/*   Updated: 2024/01/16 13:01:47 by alvega-g         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <push_swap.h>
+
+void ft_set_b_target(t_stack *stack_a, t_stack *stack_b)
+{
+	t_stack *current;
+	t_stack *target;
+	int best;
+
+	while (stack_b)
+	{
+		best = INT_MAX;
+		current = stack_a;
+		while (current)
+		{
+			if (current->n > stack_b->n && current->n < best)
+			{
+				best = current->n;
+				target = current;
+			}
+			current = current->next;
+		}
+		if (best == INT_MAX)
+			stack_b->target_node = ft_find_min(stack_a);
+		else
+			stack_b->target_node = target;
+		stack_b = stack_b->next;
+	}
+}
+
+void ft_init_stack_b(t_stack *stack_a, t_stack *stack_b)
+{
+	ft_index(stack_a);
+	ft_index(stack_b);
+	ft_set_b_target(stack_a, stack_b);
+}
