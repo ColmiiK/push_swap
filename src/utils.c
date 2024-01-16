@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 14:25:28 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/15 16:36:16 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:05:59 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_perror(char *s)
 	exit(EXIT_FAILURE);
 }
 
-bool ft_is_stack_sorted(t_stack *stack)
+bool	ft_is_stack_sorted(t_stack *stack)
 {
 	if (stack == NULL)
 		return (false);
@@ -31,7 +31,7 @@ bool ft_is_stack_sorted(t_stack *stack)
 	return (true);
 }
 
-void ft_sort_three(t_stack **stack)
+void	ft_sort_three(t_stack **stack)
 {
 	t_stack *big;
 
@@ -44,7 +44,7 @@ void ft_sort_three(t_stack **stack)
 		ft_sa(stack);
 }
 
-t_stack *ft_find_big(t_stack *stack)
+t_stack	*ft_find_big(t_stack *stack)
 {
 	t_stack *big;
 	t_stack *current;
@@ -61,7 +61,7 @@ t_stack *ft_find_big(t_stack *stack)
 	return (big);
 }
 
-int ft_stack_len(t_stack *stack)
+int	ft_stack_len(t_stack *stack)
 {
 	int len;
 	t_stack *current;
