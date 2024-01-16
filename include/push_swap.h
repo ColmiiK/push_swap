@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:57:17 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/16 13:05:35 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/16 18:58:34 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,10 @@ typedef struct s_stack
 	int				push_cost;
 	bool			above_median;
 	bool			cheapest;
-	
-
 }					t_stack;
 
 void				ft_perror(char *s);
+void				ft_annihilation(t_stack *stack);
 void				ft_parse_av(char **av, t_stack **stack);
 bool				ft_is_stack_sorted(t_stack *stack);
 void				ft_sort_three(t_stack **stack);
@@ -45,10 +44,6 @@ void				ft_min_on_top(t_stack **stack_a);
 void				ft_prepare_push(t_stack **stack, t_stack *top, char c);
 void				ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b);
 void				ft_move_b_to_a(t_stack **stack_a, t_stack **stack_b);
-
-
-void				print_stacks(t_stack *stack_a, t_stack *stack_b);
-
 void				ft_swap(t_stack **stack);
 void				ft_push(t_stack **dest, t_stack **src);
 void				ft_rotate(t_stack **stack);
@@ -64,6 +59,5 @@ void				ft_rrb(t_stack **stack_b);
 void				ft_ss(t_stack **stack_a, t_stack **stack_b);
 void				ft_rr(t_stack **stack_a, t_stack **stack_b);
 void				ft_rrr(t_stack **stack_a, t_stack **stack_b);
-
 
 #endif

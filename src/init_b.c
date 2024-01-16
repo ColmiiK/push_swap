@@ -6,17 +6,17 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 12:56:26 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/16 13:09:17 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/16 18:50:44 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void ft_set_b_target(t_stack *stack_a, t_stack *stack_b)
+void	ft_set_b_target(t_stack *stack_a, t_stack *stack_b)
 {
-	t_stack *current;
-	t_stack *target;
-	int best;
+	t_stack	*current;
+	t_stack	*target;
+	int		best;
 
 	while (stack_b)
 	{
@@ -39,7 +39,7 @@ void ft_set_b_target(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-void ft_init_stack_b(t_stack *stack_a, t_stack *stack_b)
+void	ft_init_stack_b(t_stack *stack_a, t_stack *stack_b)
 {
 	ft_index(stack_a);
 	ft_index(stack_b);

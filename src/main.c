@@ -6,126 +6,47 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:59:47 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/16 15:15:01 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/16 18:58:01 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
+// void print_stacks(t_stack *stack_a, t_stack *stack_b)
+// {
+//     t_stack *current_a = stack_a;
+//     t_stack *current_b = stack_b;
 
-/*	INSTRUCTIONS:
-	
-	COST ANALYSIS:
-	Every 'a' node needs a target node from stack 'b'
-	The target node will be the closest smaller number to the 'a' node
-	If no closest smaller number is found, then the target node will be the max value
-	sum(operations to bring 'a' to top + operations to bring 'a->target node' on top)
-	after each push, we re-evaluate the costs and choose the cheapest move
-	
-	SORT THREE:
-	Ensure biggest number is last
-	Perform sa if needed
-	
+//     ft_printf("Stack A | Stack B\n");
+//     ft_printf("--------|--------\n");
 
-	FLOW:
-	If stack a is bigger than 3: push 2 numbers to stack b
-	Until stack a is equal to 3: calculate costs and perform cheapest move from stack a to stack b, repeat until there are 3 nodes left in a
-	Sort those three nodes
-	Push all nodes in stack b to stack a: calculate costs and perform cheapest move from stack b to stack a
-	Rotate or reverse rotate to take the smallest node to the top
+//     while (current_a != NULL || current_b != NULL) {
+//         if (current_a != NULL) {
+//             ft_printf("%d \t| ", current_a->n);
+//             current_a = current_a->next;
+//         } else {
+//             ft_printf("\t| ");
+//         }
+//         if (current_b != NULL) {
+//             ft_printf("%d\n", current_b->n);
+//             current_b = current_b->next;
+//         } else {
+//             ft_printf("\n");
+//         }
+//     }
+// 	ft_printf("\n");
+// }
 
-	
-	TODO:
-	Utility functions:
-		-Find stack lenght
-		-Find the last node
-		-Find the min and the max node
-
-
-	DONE:
-	sa -> swap the first and second numbers of stack a
-	sb -> swap the first and second numbers of stack b
-	ss -> perform sa and sb at the same time
-	pa -> push the first number of stack b to stack a
-	pb -> push the first number of stack a to stack b
-	ra -> move up all numbers in stack a, making the first number the last one
-	rb -> move up all numbers in stack b, making the first number the last one
-	rr -> perform ra and rb at the same time
-	rra -> inverse of ra
-	rrb -> inverse of rb
-	rrr -> perform rra and rrb at the same time
-	parse numbers in command line, both when they are separated (1 2 3) and when they're bound by commas ("1 2 3")
-	get those numbers in a linked list (1->2->3)
-	
-
-	INPUT:
-	./push_swap 3 2 1 4 -2 0
-	./push_swap "3 2 1 4 -2 0"
-	./push_swap "3 2" 1 4 "-2 0"
-
-
-	CURRENT:
-	./push_swap 5 4 3 2 1
-	pb
-	pb
-	ra
-	sa
-	Seg fault
-	
-*/
-
-
-void print_stacks(t_stack *stack_a, t_stack *stack_b)
+int	main(int ac, char **av)
 {
-    t_stack *current_a = stack_a;
-    t_stack *current_b = stack_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
-    ft_printf("Stack A | Stack B\n");
-    ft_printf("--------|--------\n");
-
-    while (current_a != NULL || current_b != NULL) {
-        if (current_a != NULL) {
-            ft_printf("%d \t| ", current_a->n);
-            current_a = current_a->next;
-        } else {
-            ft_printf("\t| ");
-        }
-        if (current_b != NULL) {
-            ft_printf("%d\n", current_b->n);
-            current_b = current_b->next;
-        } else {
-            ft_printf("\n");
-        }
-    }
-	ft_printf("\n");
-}
-
-
-void ft_annihilation(t_stack *stack)
-{
-	t_stack *current;
-	t_stack *next;
-	
-	current = stack;
-	while (current != NULL)
-	{
-		next = current->next;
-		free(current);
-		current = next;
-	}
-}
-
-int main(int ac, char **av)
-{
-    t_stack *stack_a;
-    t_stack *stack_b;
-    
-    stack_a = NULL;
-    stack_b = NULL;
+	stack_a = NULL;
+	stack_b = NULL;
 	if (ac < 2 || (ac == 2 && !av[1][0]))
 		return (1);
-    ft_parse_av(av, &stack_a);
-	// print_stacks(stack_a, stack_b);
+	ft_parse_av(av, &stack_a);
 	if (ft_is_stack_sorted(stack_a) == false)
 	{
 		if (ft_stack_len(stack_a) == 2)
@@ -133,9 +54,8 @@ int main(int ac, char **av)
 		else if (ft_stack_len(stack_a) == 3)
 			ft_sort_three(&stack_a);
 		else
-		 	ft_sort_stacks(&stack_a, &stack_b);
+			ft_sort_stacks(&stack_a, &stack_b);
 	}
-    // print_stacks(stack_a, stack_b);
-    ft_annihilation(stack_a);
-    ft_annihilation(stack_b);
+	ft_annihilation(stack_a);
+	ft_annihilation(stack_b);
 }
