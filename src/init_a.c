@@ -6,21 +6,21 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:07:45 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/16 18:50:26 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/17 11:23:42 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void	ft_set_a_target(t_stack *stack_a, t_stack *stack_b)
+static void	ft_set_a_target(t_stack *stack_a, t_stack *stack_b)
 {
 	t_stack	*current;
 	t_stack	*target;
-	int		best;
+	long	best;
 
 	while (stack_a)
 	{
-		best = INT_MIN;
+		best = LONG_MIN;
 		current = stack_b;
 		while (current)
 		{
@@ -31,7 +31,7 @@ void	ft_set_a_target(t_stack *stack_a, t_stack *stack_b)
 			}
 			current = current->next;
 		}
-		if (best == INT_MIN)
+		if (best == LONG_MIN)
 			stack_a->target_node = ft_find_big(stack_b);
 		else
 			stack_a->target_node = target;
@@ -39,7 +39,7 @@ void	ft_set_a_target(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-void	ft_cost(t_stack *stack_a, t_stack *stack_b)
+static void	ft_cost(t_stack *stack_a, t_stack *stack_b)
 {
 	int	len_a;
 	int	len_b;
@@ -59,14 +59,14 @@ void	ft_cost(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-void	ft_set_cheapest(t_stack *stack)
+static void	ft_set_cheapest(t_stack *stack)
 {
-	int		cheap_value;
-	t_stack	*cheap_node;
+	long		cheap_value;
+	t_stack		*cheap_node;
 
 	if (!stack)
 		return ;
-	cheap_value = INT_MAX;
+	cheap_value = LONG_MAX;
 	while (stack)
 	{
 		if (stack->push_cost < cheap_value)

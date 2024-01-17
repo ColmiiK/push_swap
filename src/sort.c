@@ -6,11 +6,32 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:25:03 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/16 18:57:47 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/17 10:45:38 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
+
+static void	ft_move_b_to_a(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_prepare_push(stack_a, (*stack_b)->target_node, 'a');
+	ft_pa(stack_a, stack_b);
+}
+
+static void	ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*cheapest_node;
+
+	cheapest_node = ft_find_cheapest(*stack_a);
+	if (cheapest_node->above_median && cheapest_node->target_node->above_median)
+		ft_rotate_both(stack_a, stack_b, cheapest_node);
+	else if (!(cheapest_node->above_median)
+		&& !(cheapest_node->target_node->above_median))
+		ft_rrotate_both(stack_a, stack_b, cheapest_node);
+	ft_prepare_push(stack_a, cheapest_node, 'a');
+	ft_prepare_push(stack_b, cheapest_node->target_node, 'b');
+	ft_pb(stack_b, stack_a);
+}
 
 void	ft_sort_three(t_stack **stack)
 {

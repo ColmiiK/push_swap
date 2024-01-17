@@ -6,21 +6,21 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 12:56:26 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/16 18:50:44 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/17 11:23:54 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void	ft_set_b_target(t_stack *stack_a, t_stack *stack_b)
+static void	ft_set_b_target(t_stack *stack_a, t_stack *stack_b)
 {
 	t_stack	*current;
 	t_stack	*target;
-	int		best;
+	long	best;
 
 	while (stack_b)
 	{
-		best = INT_MAX;
+		best = LONG_MAX;
 		current = stack_a;
 		while (current)
 		{
@@ -31,7 +31,7 @@ void	ft_set_b_target(t_stack *stack_a, t_stack *stack_b)
 			}
 			current = current->next;
 		}
-		if (best == INT_MAX)
+		if (best == LONG_MAX)
 			stack_b->target_node = ft_find_min(stack_a);
 		else
 			stack_b->target_node = target;
