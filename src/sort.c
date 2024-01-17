@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:25:03 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/17 10:45:38 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/17 11:53:38 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_sort_stacks(t_stack **stack_a, t_stack **stack_b)
 		ft_pb(stack_b, stack_a);
 	if (len-- > 3 && !ft_is_stack_sorted(*stack_a))
 		ft_pb(stack_b, stack_a);
-	while (len-- > 3 && !ft_is_stack_sorted(*stack_a))
+	while (len-- > 3)
 	{
 		ft_init_stack_a(*stack_a, *stack_b);
 		ft_move_a_to_b(stack_a, stack_b);
