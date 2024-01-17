@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 12:33:28 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/17 16:44:42 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:14:38 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ void	ft_min_on_top(t_stack **stack_a)
 void	ft_rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheap)
 {
 	while (*stack_b != cheap->target_node && *stack_a != cheap)
+	{
+		// ft_printf("<-\n");
 		ft_rr(stack_a, stack_b);
+	}
 	ft_index(*stack_a);
 	ft_index(*stack_b);
 }
@@ -50,7 +53,10 @@ void	ft_rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheap)
 void	ft_rrotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheap)
 {
 	while (*stack_b != cheap->target_node && *stack_a != cheap)
+	{
+		// ft_printf("<-\n");
 		ft_rrr(stack_a, stack_b);
+	}
 	ft_index(*stack_a);
 	ft_index(*stack_b);
 }
