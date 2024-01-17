@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:59:47 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/17 11:26:43 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/17 11:36:10 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int	main(int ac, char **av)
 	if (ac == 2 && !av[1][0])
 		ft_perror("Error");
 	ft_parse_av(av, &stack_a);
-	// print_stacks(stack_a, stack_b);
 	if (ft_is_stack_sorted(stack_a) == false)
 	{
 		if (ft_stack_len(stack_a) == 2)
@@ -59,7 +58,6 @@ int	main(int ac, char **av)
 		else
 			ft_sort_stacks(&stack_a, &stack_b);
 	}
-	// print_stacks(stack_a, stack_b);
 	ft_annihilation(stack_a);
 	ft_annihilation(stack_b);
 }
