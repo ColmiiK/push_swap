@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 14:25:28 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/16 18:58:07 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/17 16:46:13 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,14 @@ t_stack	*ft_find_big(t_stack *stack)
 int	ft_stack_len(t_stack *stack)
 {
 	int		len;
-	t_stack	*current;
 
+	if (!stack)
+		return (0);
 	len = 0;
-	current = stack;
-	while (current != NULL)
+	while (stack)
 	{
+		stack = stack->next;
 		len++;
-		current = current->next;
 	}
 	return (len);
 }
