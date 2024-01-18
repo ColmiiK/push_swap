@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:25:03 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/17 17:15:49 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:46:53 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,10 @@ static void	ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b)
 
 	cheapest_node = ft_find_cheapest(*stack_a);
 	if (cheapest_node->above_median && cheapest_node->target_node->above_median)
-	{
 		ft_rotate_both(stack_a, stack_b, cheapest_node);
-	}
 	else if (!(cheapest_node->above_median)
 		&& !(cheapest_node->target_node->above_median))
-	{
 		ft_rrotate_both(stack_a, stack_b, cheapest_node);
-	}
 	ft_prepare_push(stack_a, cheapest_node, 'a');
 	ft_prepare_push(stack_b, cheapest_node->target_node, 'b');
 	ft_pb(stack_b, stack_a);
@@ -50,10 +46,22 @@ void	ft_sort_three(t_stack **stack)
 		ft_sa(stack);
 }
 
+void	ft_set_all_nodes(t_stack *stack)
+{
+	if (!stack)
+		return ;
+	while (stack)
+	{
+		stack->cheapest = false;
+		stack = stack->next;
+	}
+}
+
 void	ft_sort_stacks(t_stack **stack_a, t_stack **stack_b)
 {
 	int	len;
 
+	ft_set_all_nodes(*stack_a);
 	len = ft_stack_len(*stack_a);
 	if (len-- > 3 && !ft_is_stack_sorted(*stack_a))
 		ft_pb(stack_b, stack_a);
