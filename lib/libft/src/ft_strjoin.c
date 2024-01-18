@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:35:38 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/10 12:35:03 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:55:58 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(joined, s2, len);
 	return (joined);
 }
-
-// int main()
-// {
-// 	char *s1 = "Hello";
-// 	char *s2 = "World";
-// 	char *joined = ft_strjoin(s1, s2);
-
-// 	printf("%s\n", joined);
-// 	free(joined);
-// }

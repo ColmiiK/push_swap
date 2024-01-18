@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 15:43:16 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:33:28 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:55:32 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,3 @@ void	*ft_memset(void *str, int c, size_t len)
 	}
 	return (str);
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	char	str[20];
-
-	str[20] = "Hello World";
-	printf("%s\n", str);
-	memset(str + 3, '.', 3);
-	printf("%s", str);
-}
-*/

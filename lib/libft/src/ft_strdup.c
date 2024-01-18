@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 11:31:28 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:33:52 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:55:53 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,3 @@ char	*ft_strdup(const char *s)
 	dest[i] = 0;
 	return (dest);
 }
-// int main()
-// {
-// 	char *s = "lorem ipsum dolor sit amet";
-// 	char *temp = ft_strdup(s);
-
-// 	printf("%s\n", temp);
-// 	free(temp);
-// }

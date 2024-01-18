@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 14:35:46 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:33:00 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:54:49 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,3 @@ char	*ft_itoa(int n)
 	s[j] = 0;
 	return (s);
 }
-// int	main(void)
-// {
-// 	int		n;
-// 	char	*s;
-
-// 	n = -12345;
-// 	s = ft_itoa(n);
-// 	printf("%s\n", s);
-// 	free(s);
-// }

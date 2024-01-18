@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:37:00 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:32:06 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:54:33 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,3 @@ int	ft_atoi(const char *str)
 	}
 	return (x * is_negative);
 }
-
-/*
-int main ()
-{
-	char str[] = "1 50";
- 	printf("ATOI CUSTOM:%d\n", ft_atoi(str));
- 	//printf("ATOI OFICIAL:%d\n", atoi(str));
-	
-}
-*/

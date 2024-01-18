@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 13:11:01 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:33:46 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:55:47 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,18 +80,3 @@ char	**ft_split(char const *s, char c)
 	split[j] = 0;
 	return (split);
 }
-
-// int	main(void)
-// {
-// 	char *s = "lorem ipsum dolor sit amet";
-// 	char c = 32;
-// 	char **split = ft_split(s, c);
-// 	int i = 0;
-
-// 	while (i < word_count(s, c))
-// 	{
-// 		printf("%s\n", split[i]);
-// 		i++;
-// 	}
-// 	free(split);
-// }

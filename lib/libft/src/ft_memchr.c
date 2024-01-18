@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 16:24:34 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:33:19 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:55:21 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
-
-// int main()
-// {
-//    char *s = "Hello";
-//    printf("%s", (char *)memchr(s, 0, 1));
-// 	printf("%s", (char *)ft_memchr(s, 0, 1));
-// }

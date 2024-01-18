@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:18:04 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:33:26 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:55:29 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-
-//  #include <string.h>
-
-// int main() {
-//     char str[50] = "Hola 12312312344123123123";
-//     char str2[5] = "Mundo";
-
-//     ft_memmove(str, str2, 15);
-
-//     printf("%s\n", str);
-
-//     return (0);
-// }

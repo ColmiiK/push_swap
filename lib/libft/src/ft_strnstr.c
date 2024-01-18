@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:18:44 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:34:15 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:57:00 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-
-// int main()
-// {
-// 	char * big = "123456789";
-//     char * little = "9";
-//	size_t max = 8;
-//     char *s1 = strnstr(big, little, max);
-//     char *s2 = ft_strnstr(big, little, max);
-
-// 	printf("%s\n%s\n", s1, s2);
-// }

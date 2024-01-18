@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 11:35:20 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:34:20 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:56:26 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trim[i] = 0;
 	return (trim);
 }
-
-// int	main(void)
-// {
-// 	char *s1 = "lorem ipsum dolor sit amet";
-// 	char *set = "tel";
-// 	char *trim = ft_strtrim(s1, set);
-
-// 	printf("%s\n", trim);
-// 	free(trim);
-// }

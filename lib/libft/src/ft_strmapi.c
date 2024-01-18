@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 10:52:52 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:34:06 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:56:09 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = 0;
 	return (str);
 }
-
-// char	modifier(unsigned int i, char c)
-// {
-// 	i = 0;
-// 	if (c >= 'a' && c <= 'z')
-// 		return (c - 32);
-// 	else if (c >= 'A' && c <= 'Z')
-// 		return (c + 32);
-// 	else
-// 		return (c);
-// }
-
-// int	main(void)
-// {
-// 	char	*s = "lorem ipsum dolor sit amet";
-// 	char *resultado = ft_strmapi(s, &modifier);
-
-// 	printf("%s\n%s\n", s, resultado);
-// 	free(resultado);
-// }

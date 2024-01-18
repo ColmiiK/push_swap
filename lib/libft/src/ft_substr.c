@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:12:11 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:34:22 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:56:29 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	subs[j] = 0;
 	return (subs);
 }
-
-// int main()
-// {
-// 	char *s = "";
-// 	unsigned int start = 3;
-// 	size_t len = 5;
-// 	char *subs =  ft_substr(s, start, len);
-// 	printf("%s\n", subs);
-// 	free(subs);
-// }

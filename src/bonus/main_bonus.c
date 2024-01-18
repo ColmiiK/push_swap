@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:59:47 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/18 17:47:08 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:57:34 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,11 @@ static void	ft_check_instructions(t_stack **stack_a, t_stack **stack_b)
 	ft_annihilation(*stack_b);
 }
 
-void leaks(void)
-{
-	system("leaks -q checker");
-}
-
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	// atexit(leaks);
 	stack_a = NULL;
 	stack_b = NULL;
 	if (ac < 2)

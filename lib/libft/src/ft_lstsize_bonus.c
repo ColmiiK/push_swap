@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 10:46:58 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:33:17 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:55:18 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,3 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
-// int main()
-// {
-// 	t_list *head = malloc(sizeof(t_list));
-
-// 	head->content = "1";
-// 	head->next = malloc(sizeof(t_list));
-// 	head->next->content = "2";
-// 	head->next->next = malloc(sizeof(t_list));
-// 	head->next->next->content = "3";
-// 	head->next->next->next = 0;
-
-// 	int size = ft_lstsize(head);
-
-// 	printf("%i\n", size);
-
-// 	t_list *temp;
-// 	while (head)
-// 	{
-// 		temp = head;
-// 		head = head->next;
-// 		free(temp);
-// 	}
-// }

@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:11:27 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:33:09 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:55:03 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,45 +22,3 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
-
-// void	f(void *str)
-// {
-// 	char	*s;
-// 	int		i;
-
-// 	s = (char *)str;
-// 	i = 0;
-// 	while (s[i])
-// 	{
-// 		s[i] = s[i] + 1;
-// 		i++;
-// 	}
-// }
-
-// int	main(void)
-// {
-// 	t_list	*head;
-// 	t_list	*temp;
-
-// 	head = malloc(sizeof(t_list));
-// 	head->content = ft_strdup("lorem");
-// 	head->next = malloc(sizeof(t_list));
-// 	head->next->content = ft_strdup("ipsum");
-// 	head->next->next = malloc(sizeof(t_list));
-// 	head->next->next->content = ft_strdup("dolor");
-// 	head->next->next->next = 0;
-// 	ft_lstiter(head, f);
-// 	temp = head;
-// 	while (temp)
-// 	{
-// 		printf("%s\n", temp->content);
-// 		temp = temp->next;
-// 	}
-// 	while (head)
-// 	{
-// 		temp = head;
-// 		head = head->next;
-// 		free(temp->content);
-// 		free(temp);
-// 	}
-// }

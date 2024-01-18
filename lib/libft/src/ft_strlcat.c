@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 18:18:14 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:34:00 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:56:01 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	dest[i] = 0;
 	return (x);
 }
-
-/*
-
-int	main(void)
-{
-	char	destination[11] = "Hello";
-	char	*source = "World";
-
-	strlcat(destination, source, 11);
-	printf("%s\n", destination);
-	return (0);
-}
-*/

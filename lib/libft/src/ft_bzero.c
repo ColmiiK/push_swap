@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 16:26:41 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:32:28 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:54:38 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,3 @@ void	*ft_bzero(void *str, size_t n)
 	}
 	return (str);
 }
-
-// int main()
-// {
-// 	char str[30] = "lorem ipsum dolor sit amet";
-// 	size_t n = 0;
-
-// 	printf("%s\n", ft_bzero(str, n));
-// }

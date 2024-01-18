@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 18:11:40 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:34:04 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:56:04 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,3 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	}
 	return (x);
 }
-
-/*
-
-int	main()
-{
-	char a[] = "Source";
-	char b[] = "Destination";
-	unsigned int c = 5;
-
-	printf("STRING A = %s\n", a);
-	printf("STRING B = %s\n", b);
-	ft_strlcpy(a, b, c);
-	printf("STRING cambiado = %s\n", a);
-	return (0);
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:54:00 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:34:17 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:56:21 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (temp);
 }
-
-// int main()
-// {
-// 	char *s = "";
-// 	printf("%s\n", strrchr(s, '\0' + 256));
-// 	printf("%s\n", ft_strrchr(s, '\0' + 256));
-// }

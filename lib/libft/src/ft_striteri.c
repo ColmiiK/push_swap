@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 11:11:43 by alvega-g          #+#    #+#             */
-/*   Updated: 2023/12/14 11:33:54 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:55:57 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		}
 	}
 }
-
-// void	print(unsigned int index, char *c)
-// {
-// 	printf("%d: %c\n", index, *c);
-// }
-
-// int	main(void)
-// {
-// 	char *str = "lorem ipsum dolor sit amet";
-
-// 	ft_striteri(str, print);
-// }
