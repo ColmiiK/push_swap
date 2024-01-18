@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:25:03 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/18 13:46:53 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:35:54 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void	ft_sort_stacks(t_stack **stack_a, t_stack **stack_b)
 
 	ft_set_all_nodes(*stack_a);
 	len = ft_stack_len(*stack_a);
+	if (ft_check_big_ordered(*stack_a) == true)
+		ft_ra(stack_a);
 	if (len-- > 3 && !ft_is_stack_sorted(*stack_a))
 		ft_pb(stack_b, stack_a);
 	if (len-- > 3 && !ft_is_stack_sorted(*stack_a))

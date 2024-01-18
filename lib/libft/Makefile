@@ -1,11 +1,11 @@
 #Variables
 
 NAME = libft.a
-INCLUDE = include
+INCLUDE = ../../include
 SRC_DIR = src/
 OBJ_DIR = obj/
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra
 RM = rm -f
 AR = ar rcs
 

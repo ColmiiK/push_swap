@@ -7,7 +7,7 @@ SRC_DIR = src/
 B_SRC_DIR = src/bonus/
 OBJ_DIR = obj/
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra
 AR = ar rcs
 
 # Colors
@@ -25,12 +25,12 @@ WHITE = \033[0;97m
 #Sources
 	
 SRC_FILES = main parsing moves perms_a perms_b perms_d sort init_a init_b utils_1 utils_2 utils_3
-B_SRC_FILES = 
+B_SRC_FILES = main parsing moves perms_a perms_b perms_d utils_1
 
 SRC = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
-B_SRC = $(addprefix $(B_SRC_DIR), $(addsuffix .c, $(B_SRC_FILES)))
+B_SRC = $(addprefix $(B_SRC_DIR), $(addsuffix _bonus.c, $(B_SRC_FILES)))
 OBJ = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
-B_OBJ = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(B_SRC_FILES)))
+B_OBJ = $(addprefix $(OBJ_DIR), $(addsuffix _bonus.o, $(B_SRC_FILES)))
 OBJF = .cache_exists
 
 ###
@@ -62,6 +62,7 @@ clean:
 fclean:		
 			@rm -rf $(OBJ_DIR)
 			@rm -f $(NAME)
+			@rm -f checker
 			@make fclean -C $(LIBFT)
 			@echo "$(BLUE)$(NAME) executable cleaned!$(DEF_COLOR)"
 
@@ -73,8 +74,10 @@ norm:
 
 bonus: $(B_OBJ)
 			@make -C $(LIBFT)
-			@$(CC) $(CFLAGS) $(B_OBJ) -L$(LIBFT) -lft -o $(NAME)
-			@echo "$(MAGENTA)$(NAME) bonus compiled!$(DEF_COLOR)"
+			@$(CC) $(CFLAGS) $(B_OBJ) -L$(LIBFT) -lft -o checker
+			@echo "$(MAGENTA)checker compiled!$(DEF_COLOR)"
 
+test:
+			@./push_swap 9 8 7 6 5 4 3 2 1 | ./checker 9 8 7 6 5 4 3 2 1
 
-.PHONY: all clean fclean re norm bonus
+.PHONY: all clean fclean re norm bonus test

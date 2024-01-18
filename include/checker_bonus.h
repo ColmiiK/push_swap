@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/03 15:57:17 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/18 17:36:38 by alvega-g         ###   ########.fr       */
+/*   Created: 2024/01/18 15:35:55 by alvega-g          #+#    #+#             */
+/*   Updated: 2024/01/18 17:22:41 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
 # include <libft.h>
 
@@ -32,18 +32,6 @@ void	ft_annihilation(t_stack *stack);
 void	ft_parse_av(char **av, t_stack **stack);
 // Sorting & utils
 bool	ft_is_stack_sorted(t_stack *stack);
-void	ft_sort_three(t_stack **stack);
-void	ft_sort_stacks(t_stack **stack_a, t_stack **stack_b);
-t_stack	*ft_find_big(t_stack *stack);
-t_stack	*ft_find_min(t_stack *stack);
-int		ft_stack_len(t_stack *stack);
-void	ft_index(t_stack *stack);
-void	ft_init_stack_a(t_stack *stack_a, t_stack *stack_b);
-void	ft_init_stack_b(t_stack *stack_a, t_stack *stack_b);
-void	ft_min_on_top(t_stack **stack_a);
-void	ft_prepare_push(t_stack **stack, t_stack *top, char c);
-t_stack	*ft_find_cheapest(t_stack *stack);
-bool	ft_check_big_ordered(t_stack *stack);
 // Movements
 void	ft_swap(t_stack **stack);
 void	ft_push(t_stack **dest, t_stack **src);
