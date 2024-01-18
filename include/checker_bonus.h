@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 15:35:55 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/18 17:22:41 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:59:42 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,8 @@
 typedef struct s_stack
 {
 	struct s_stack	*next;
-	struct s_stack	*target_node;
 	int				n;
-	int				index;
-	int				push_cost;
-	bool			above_median;
-	bool			cheapest;
+
 }					t_stack;
 // Error checking & cleanup
 void	ft_perror(char *s);
@@ -48,7 +44,5 @@ void	ft_rrb(t_stack **stack_b);
 void	ft_ss(t_stack **stack_a, t_stack **stack_b);
 void	ft_rr(t_stack **stack_a, t_stack **stack_b);
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
-void	ft_rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheap);
-void	ft_rrotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheap);
 
 #endif
