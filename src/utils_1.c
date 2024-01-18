@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 14:25:28 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/17 16:46:13 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/17 19:16:32 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,22 @@ bool	ft_is_stack_sorted(t_stack *stack)
 
 t_stack	*ft_find_big(t_stack *stack)
 {
-	t_stack	*big;
-	t_stack	*current;
+	long	biggest;
+	t_stack	*biggest_node;
 
-	current = stack->next;
-	big = stack;
-	while (current != NULL)
+	if (!stack)
+		return (NULL);
+	biggest = LONG_MIN;
+	while (stack)
 	{
-		if (current->n > big->n)
-			big = current;
-		current = current->next;
+		if (stack->n > biggest)
+		{
+			biggest = stack->n;
+			biggest_node = stack;
+		}
+		stack = stack->next;
 	}
-	return (big);
+	return (biggest_node);
 }
 
 int	ft_stack_len(t_stack *stack)

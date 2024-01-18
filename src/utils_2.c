@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 12:33:28 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/17 17:14:38 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/17 19:17:27 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 t_stack	*ft_find_min(t_stack *stack)
 {
-	t_stack	*small;
-	t_stack	*current;
+	long	smallest;
+	t_stack	*smallest_node;
 
-	current = stack->next;
-	small = stack;
-	while (current != NULL)
+	if (!stack)
+		return (NULL);
+	smallest = LONG_MAX;
+	while (stack)
 	{
-		if (current->n < small->n)
-			small = current;
-		current = current->next;
+		if (stack->n < smallest)
+		{
+			smallest = stack->n;
+			smallest_node = stack;
+		}
+		stack = stack->next;
 	}
-	return (small);
+	return (smallest_node);
 }
 
 void	ft_min_on_top(t_stack **stack_a)
