@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:59:47 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/18 17:57:34 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:07:02 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ static void	ft_instruction(char *line, t_stack **stack_a, t_stack **stack_b)
 		ft_rr(stack_a, stack_b);
 	else if (!ft_strncmp(line, "rrr\n", ft_strlen(line)))
 		ft_rrr(stack_a, stack_b);
+	else
+		ft_perror("Error");
 }
 
 static void	ft_check_instructions(t_stack **stack_a, t_stack **stack_b)
