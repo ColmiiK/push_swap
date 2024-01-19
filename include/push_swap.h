@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:57:17 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/18 17:36:38 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/19 18:27:48 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ typedef struct s_stack
 	bool			cheapest;
 }					t_stack;
 // Error checking & cleanup
-void	ft_perror(char *s);
+void	ft_perror(char *s, t_stack *stack_a, t_stack *stack_b);
 void	ft_annihilation(t_stack *stack);
 // Parsing
-void	ft_parse_av(char **av, t_stack **stack);
+void	ft_parse_av(char **av, t_stack **stack_a, t_stack **stack_b);
 // Sorting & utils
 bool	ft_is_stack_sorted(t_stack *stack);
 void	ft_sort_three(t_stack **stack);

@@ -6,15 +6,17 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 14:25:28 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/17 19:16:32 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/19 18:26:02 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void	ft_perror(char *s)
+void	ft_perror(char *s, t_stack *stack_a, t_stack *stack_b)
 {
 	ft_putendl_fd(s, STDERR_FILENO);
+	ft_annihilation(stack_a);
+	ft_annihilation(stack_b);
 	exit(EXIT_FAILURE);
 }
 

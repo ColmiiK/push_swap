@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:25:03 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/18 17:35:54 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/18 19:47:17 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,17 @@ static void	ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b)
 	ft_pb(stack_b, stack_a);
 }
 
+static void	ft_set_all_nodes(t_stack *stack)
+{
+	if (!stack)
+		return ;
+	while (stack)
+	{
+		stack->cheapest = false;
+		stack = stack->next;
+	}
+}
+
 void	ft_sort_three(t_stack **stack)
 {
 	t_stack	*big;
@@ -46,30 +57,19 @@ void	ft_sort_three(t_stack **stack)
 		ft_sa(stack);
 }
 
-void	ft_set_all_nodes(t_stack *stack)
-{
-	if (!stack)
-		return ;
-	while (stack)
-	{
-		stack->cheapest = false;
-		stack = stack->next;
-	}
-}
-
 void	ft_sort_stacks(t_stack **stack_a, t_stack **stack_b)
 {
-	int	len;
+	int	size;
 
 	ft_set_all_nodes(*stack_a);
-	len = ft_stack_len(*stack_a);
+	size = ft_stack_len(*stack_a);
 	if (ft_check_big_ordered(*stack_a) == true)
 		ft_ra(stack_a);
-	if (len-- > 3 && !ft_is_stack_sorted(*stack_a))
+	if (size-- > 3 && ft_is_stack_sorted(*stack_a) == false)
 		ft_pb(stack_b, stack_a);
-	if (len-- > 3 && !ft_is_stack_sorted(*stack_a))
+	if (size-- > 3 && ft_is_stack_sorted(*stack_a) == false)
 		ft_pb(stack_b, stack_a);
-	while (len-- > 3 && !ft_is_stack_sorted(*stack_a))
+	while (size-- > 3 && ft_is_stack_sorted(*stack_a) == false)
 	{
 		ft_init_stack_a(*stack_a, *stack_b);
 		ft_move_a_to_b(stack_a, stack_b);
