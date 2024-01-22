@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:57:17 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/19 18:27:48 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/22 13:21:46 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ typedef struct s_stack
 }					t_stack;
 // Error checking & cleanup
 void	ft_perror(char *s, t_stack *stack_a, t_stack *stack_b);
+void	ft_perror_joined(char *s, t_stack *stack_a,
+			t_stack *stack_b, char *joined);
+void	ft_perror_node(t_stack *node, char *s);
 void	ft_annihilation(t_stack *stack);
 // Parsing
 void	ft_parse_av(char **av, t_stack **stack_a, t_stack **stack_b);

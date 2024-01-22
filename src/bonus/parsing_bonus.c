@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_bonus.c                                    :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 14:24:20 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/19 18:39:46 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/22 13:21:15 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,22 @@ static void	ft_check_list(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-static void	ft_compare(char *token, char *temp,
+static bool	ft_compare(char *token, char *temp,
 	t_stack *stack_a, t_stack *stack_b)
 {
 	if (ft_strncmp(token, temp, ft_strlen(token)))
 	{
+		ft_putendl_fd("Error", STDERR_FILENO);
+		ft_annihilation(stack_a);
+		ft_annihilation(stack_b);
 		free(temp);
-		ft_perror("Error", stack_a, stack_b);
+		return (true);
 	}
+	return (false);
 }
 
-static void	ft_add_to_list(char *token, t_stack **stack_a, t_stack **stack_b)
+static void	ft_add_to_list(char *token, t_stack **stack_a,
+	t_stack **stack_b, char *joined)
 {
 	t_stack	*new;
 	t_stack	*current;
@@ -54,7 +59,8 @@ static void	ft_add_to_list(char *token, t_stack **stack_a, t_stack **stack_b)
 		token++;
 	new->n = ft_atoi(token);
 	temp = ft_itoa(new->n);
-	ft_compare(token, temp, *stack_a, *stack_b);
+	if (ft_compare(token, temp, *stack_a, *stack_b))
+		ft_perror_node(new, joined);
 	free(temp);
 	new->next = NULL;
 	if (*stack_a == NULL)
@@ -106,8 +112,8 @@ void	ft_parse_av(char **av, t_stack **stack_a, t_stack **stack_b)
 	while (token)
 	{
 		if (ft_check_token(token) == false)
-			ft_perror("Error", *stack_a, *stack_b);
-		ft_add_to_list(token, stack_a, stack_b);
+			ft_perror_joined("Error", *stack_a, *stack_b, joined);
+		ft_add_to_list(token, stack_a, stack_b, joined);
 		token = ft_strtok(NULL, " \t");
 	}
 	free(joined);

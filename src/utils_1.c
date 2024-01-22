@@ -6,33 +6,11 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 14:25:28 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/19 18:26:02 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/22 13:15:06 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-
-void	ft_perror(char *s, t_stack *stack_a, t_stack *stack_b)
-{
-	ft_putendl_fd(s, STDERR_FILENO);
-	ft_annihilation(stack_a);
-	ft_annihilation(stack_b);
-	exit(EXIT_FAILURE);
-}
-
-void	ft_annihilation(t_stack *stack)
-{
-	t_stack	*current;
-	t_stack	*next;
-
-	current = stack;
-	while (current != NULL)
-	{
-		next = current->next;
-		free(current);
-		current = next;
-	}
-}
 
 bool	ft_is_stack_sorted(t_stack *stack)
 {
