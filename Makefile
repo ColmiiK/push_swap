@@ -1,6 +1,7 @@
 #Variables
 
 NAME = push_swap
+B_NAME = checker
 INCLUDE = include
 LIBFT = lib/libft
 SRC_DIR = src/
@@ -35,7 +36,6 @@ OBJF = .cache_exists
 
 ###
 
-
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
@@ -62,7 +62,7 @@ clean:
 fclean:		
 			@rm -rf $(OBJ_DIR)
 			@rm -f $(NAME)
-			@rm -f checker
+			@rm -f $(B_NAME)
 			@make fclean -C $(LIBFT)
 			@echo "$(BLUE)$(NAME) executable cleaned!$(DEF_COLOR)"
 
@@ -74,10 +74,7 @@ norm:
 
 bonus: $(B_OBJ)
 			@make -C $(LIBFT)
-			@$(CC) $(CFLAGS) $(B_OBJ) -L$(LIBFT) -lft -o checker
-			@echo "$(MAGENTA)checker compiled!$(DEF_COLOR)"
+			@$(CC) $(CFLAGS) $(B_OBJ) -L$(LIBFT) -lft -o $(B_NAME)
+			@echo "$(MAGENTA)$(B_NAME) compiled!$(DEF_COLOR)"
 
-test:
-			@./push_swap 9 8 7 6 5 4 3 2 1 | ./checker 9 8 7 6 5 4 3 2 1
-
-.PHONY: all clean fclean re norm bonus test
+.PHONY: all clean fclean re norm bonus
