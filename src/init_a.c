@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:07:45 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/18 13:46:48 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:38:57 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ static void	ft_set_a_target(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
+
+/*	Check if both the node and the target are below or above the medium, divide that cost between 2 since you can double rotate and double reverse rotate
+
+*/
 static void	ft_cost(t_stack *stack_a, t_stack *stack_b)
 {
 	int	len_a;
