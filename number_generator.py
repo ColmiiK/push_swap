@@ -7,7 +7,7 @@ INT_MAX = 2147483647
 x = 500
 over_int = 0
 over = 0
-num_executions = 100
+num_executions = 1000
 total_lines = 0
 
 for iteration_num, _ in enumerate(range(num_executions), start=1):

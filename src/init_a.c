@@ -6,7 +6,7 @@
 /*   By: alvega-g <alvega-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:07:45 by alvega-g          #+#    #+#             */
-/*   Updated: 2024/01/25 13:38:57 by alvega-g         ###   ########.fr       */
+/*   Updated: 2024/01/25 17:33:20 by alvega-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,9 @@ static void	ft_cost(t_stack *stack_a, t_stack *stack_b)
 			stack_a->push_cost += stack_a->target_node->index;
 		else
 			stack_a->push_cost += len_b - (stack_a->target_node->index);
+		// ft_printf("Node %d, above medium == %d\n", stack_a->n, stack_a->above_median);
+		// ft_printf("Target node %d, above medium == %d\n", stack_a->target_node->n, stack_a->target_node->above_median);
+		// ft_printf("Cost == %d\n", stack_a->push_cost);
 		stack_a = stack_a->next;
 	}
 }
