@@ -79,13 +79,6 @@ which cannot be duplicated.
   - `rrb` (`reverse rotate b`): shift down all elements of stack b by 1. The last element becomes the first one.
   - `rrr`: `rra` and `rrb` at the same time.
 
-### PS: I've added a Python script (<code>number_generator.py</code>) to generate random numbers for testing purposes. 
-It's obivously not part of the project. To run it, execute:
-``` bash
-python number_generator.py
-``` 
-in the same folder as the <code>push_swap</code> binary. You can change the amount of numbers generated, the maximum moves for 5 points and the iterations. The script will generate numbers both from -1000 to 1000 and from INT_MIN to INT_MAX. It will display in the terminal the amount of moves of each iteration, as well as the average and total amount of iterations over the specified limit.
-
 # Bonus part
 
 <table>
